@@ -1,194 +1,567 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fedi Design Pro</title>
+<title>Fedi Design Pro | Design & CV Professionnels</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root{
+  --bg:#090909;
+  --card:#151515;
+  --gold:#d4af37;
+  --text:#ffffff;
+  --muted:#aaaaaa;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #0b0b0b;
-    color: white;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-header {
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #333;
+html{
+  scroll-behavior:smooth;
 }
 
-.logo {
-    color: #d4af37;
-    font-size: 28px;
-    font-weight: bold;
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
 }
 
-nav {
-    margin-top: 15px;
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(9,9,9,.95);
+  border-bottom:1px solid #282828;
+  padding:16px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 8px;
+.logo{
+  color:var(--gold);
+  font-size:23px;
+  font-weight:800;
 }
 
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: radial-gradient(circle, #29200b, #0b0b0b 60%);
+.logo span{
+  color:white;
 }
 
-.hero h1 {
-    font-size: 45px;
-    margin-bottom: 20px;
+nav{
+  display:flex;
+  gap:18px;
 }
 
-.gold {
-    color: #d4af37;
+nav a{
+  color:#ddd;
+  text-decoration:none;
+  font-size:14px;
 }
 
-.hero p {
-    color: #ccc;
-    font-size: 18px;
-    max-width: 650px;
-    margin: 0 auto 30px;
+nav a:hover{
+  color:var(--gold);
 }
 
-.btn {
-    display: inline-block;
-    background: #d4af37;
-    color: #111;
-    padding: 14px 25px;
-    border-radius: 7px;
-    text-decoration: none;
-    font-weight: bold;
+.hero{
+  min-height:78vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 20px;
+  background:radial-gradient(circle at top,#2a220e 0%,#090909 60%);
 }
 
-section {
-    padding: 70px 7%;
+.hero-content{
+  max-width:850px;
 }
 
-.title {
-    text-align: center;
-    margin-bottom: 40px;
+.badge{
+  display:inline-block;
+  border:1px solid #6b5720;
+  color:var(--gold);
+  padding:7px 14px;
+  border-radius:50px;
+  margin-bottom:20px;
+  font-size:13px;
 }
 
-.title h2 {
-    font-size: 32px;
+.hero h1{
+  font-size:clamp(36px,6vw,68px);
+  line-height:1.1;
+  margin-bottom:20px;
 }
 
-.title p {
-    color: #aaa;
-    margin-top: 10px;
+.gold{
+  color:var(--gold);
 }
 
-.services,
-.offers,
-.portfolio {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.hero p{
+  color:#bbb;
+  max-width:650px;
+  margin:0 auto 30px;
+  font-size:18px;
 }
 
-.card,
-.offer,
-.portfolio-item {
-    background: #151515;
-    border: 1px solid #292929;
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
+.buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
 }
 
-.card:hover,
-.offer:hover {
-    border-color: #d4af37;
+.btn{
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  border:1px solid var(--gold);
+  transition:.3s;
+  cursor:pointer;
 }
 
-.card h3,
-.offer h3 {
-    color: #d4af37;
-    margin-bottom: 15px;
+.btn-gold{
+  background:var(--gold);
+  color:#111;
 }
 
-.card p {
-    color: #aaa;
+.btn-outline{
+  color:var(--gold);
+  background:transparent;
 }
 
-.price {
-    font-size: 32px;
-    margin: 15px;
-    font-weight: bold;
+.btn:hover{
+  transform:translateY(-2px);
 }
 
-.offer ul {
-    list-style: none;
-    color: #ccc;
-    margin-bottom: 25px;
+section{
+  padding:85px 7%;
 }
 
-.offer li {
-    margin: 8px;
+.section-title{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 45px;
 }
 
-.portfolio-item {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #777;
+.section-title h2{
+  font-size:34px;
+  margin-bottom:10px;
 }
 
-.contact {
-    text-align: center;
-    background: #111;
+.section-title p{
+  color:var(--muted);
 }
 
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #777;
-    border-top: 1px solid #222;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
-.whatsapp {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    background: #25D366;
-    color: white;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 25px;
+.card{
+  background:var(--card);
+  border:1px solid #262626;
+  border-radius:15px;
+  padding:28px;
+  transition:.3s;
 }
 
-@media(max-width:700px) {
-    .hero h1 {
-        font-size: 34px;
-    }
+.card:hover{
+  border-color:var(--gold);
+  transform:translateY(-4px);
+}
 
-    .services,
-    .offers,
-    .portfolio {
-        grid-template-columns: 1fr;
-    }
+.icon{
+  font-size:30px;
+  margin-bottom:12px;
+}
 
-    nav a {
-        font-size: 13px;
-    }
+.card h3{
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:15px;
+}
+
+.cv-card{
+  text-align:center;
+}
+
+.cv-card .icon{
+  font-size:40px;
+}
+
+.pricing{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.price-card{
+  background:var(--card);
+  border:1px solid #2a2a2a;
+  border-radius:16px;
+  padding:30px;
+  text-align:center;
+}
+
+.price-card.featured{
+  border:2px solid var(--gold);
+  transform:scale(1.03);
+}
+
+.price-card h3{
+  color:var(--gold);
+}
+
+.price{
+  font-size:42px;
+  font-weight:bold;
+  margin:15px 0;
+}
+
+.price-card ul{
+  list-style:none;
+  margin-bottom:25px;
+}
+
+.price-card li{
+  color:#bbb;
+  padding:7px 0;
+  border-bottom:1px solid #222;
+}
+
+.portfolio{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.portfolio-item{
+  min-height:240px;
+  background:linear-gradient(135deg,#171717,#242424);
+  border:1px dashed #555;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  color:#999;
+  text-align:center;
+  padding:20px;
+}
+
+.portfolio-item span{
+  color:var(--gold);
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+.process{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.step{
+  text-align:center;
+  padding:20px;
+}
+
+.number{
+  width:55px;
+  height:55px;
+  margin:0 auto 15px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--gold);
+  color:#111;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.before-after{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.before,
+.after{
+  min-height:260px;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  padding:20px;
+}
+
+.before{
+  background:#171717;
+  border:1px solid #333;
+}
+
+.after{
+  background:linear-gradient(135deg,#211d0c,#151515);
+  border:1px solid var(--gold);
+}
+
+.testimonials{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.testimonial{
+  background:var(--card);
+  padding:25px;
+  border-radius:14px;
+  border:1px solid #252525;
+}
+
+.stars{
+  color:var(--gold);
+  margin-bottom:12px;
+}
+
+.testimonial p{
+  color:#bbb;
+}
+
+.client{
+  color:var(--gold);
+  margin-top:15px;
+  font-weight:bold;
+}
+
+.faq{
+  max-width:850px;
+  margin:auto;
+}
+
+details{
+  background:var(--card);
+  border:1px solid #292929;
+  border-radius:10px;
+  padding:18px;
+  margin-bottom:12px;
+}
+
+summary{
+  cursor:pointer;
+  font-weight:bold;
+}
+
+details p{
+  color:#aaa;
+  margin-top:12px;
+}
+
+.about{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+  color:#bbb;
+}
+
+.promo{
+  text-align:center;
+  background:linear-gradient(135deg,#2c240c,#171717);
+  border-top:1px solid var(--gold);
+  border-bottom:1px solid var(--gold);
+}
+
+.promo h2{
+  font-size:38px;
+  color:var(--gold);
+}
+
+.promo p{
+  margin:15px auto 25px;
+  max-width:600px;
+  color:#ddd;
+}
+
+.form-section{
+  background:#101010;
+}
+
+.form{
+  max-width:700px;
+  margin:auto;
+  background:#171717;
+  padding:30px;
+  border-radius:16px;
+  border:1px solid #2d2d2d;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.form-group{
+  margin-bottom:15px;
+}
+
+label{
+  display:block;
+  margin-bottom:7px;
+  color:#ddd;
+}
+
+input,select,textarea{
+  width:100%;
+  background:#0c0c0c;
+  color:white;
+  border:1px solid #333;
+  border-radius:8px;
+  padding:13px;
+  font-size:15px;
+}
+
+textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.form button{
+  width:100%;
+  border:none;
+  font-size:16px;
+}
+
+.contact-box{
+  text-align:center;
+  background:var(--card);
+  border-radius:15px;
+  padding:35px;
+  max-width:700px;
+  margin:auto;
+}
+
+footer{
+  background:#050505;
+  padding:40px 7%;
+  border-top:1px solid #222;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:30px;
+}
+
+footer h3{
+  color:var(--gold);
+  margin-bottom:12px;
+}
+
+footer p,footer a{
+  color:#888;
+  text-decoration:none;
+}
+
+footer a:hover{
+  color:var(--gold);
+}
+
+.copy{
+  text-align:center;
+  color:#666;
+  margin-top:30px;
+  padding-top:20px;
+  border-top:1px solid #222;
+}
+
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#25d366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:28px;
+  box-shadow:0 5px 20px rgba(0,0,0,.4);
+  z-index:100;
+}
+
+@media(max-width:850px){
+  header{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  nav{
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .grid,
+  .pricing,
+  .portfolio,
+  .testimonials{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .process{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .price-card.featured{
+    transform:none;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+  section{
+    padding:65px 6%;
+  }
+
+  .grid,
+  .pricing,
+  .portfolio,
+  .testimonials,
+  .before-after,
+  .form-grid,
+  .process{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:39px;
+  }
+
+  nav a{
+    font-size:12px;
+  }
 }
 </style>
 </head>
@@ -196,179 +569,429 @@ footer {
 <body>
 
 <header>
+  <div class="logo">FEDI <span>DESIGN PRO</span></div>
 
-<div class="logo">
-Fedi Design Pro
-</div>
-
-<nav>
-<a href="#accueil">Accueil</a>
-<a href="#services">Services</a>
-<a href="#offres">Offres</a>
-<a href="#portfolio">Portfolio</a>
-<a href="#contact">Contact</a>
-</nav>
-
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#services">Services</a>
+    <a href="#cv">CV</a>
+    <a href="#tarifs">Tarifs</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <section class="hero" id="accueil">
+  <div class="hero-content">
+    <div class="badge">✦ DESIGN PROFESSIONNEL & MODERNE</div>
 
-<h1>
-Votre image mérite
-<span class="gold">le meilleur.</span>
-</h1>
+    <h1>
+      Votre image mérite
+      <span class="gold">le meilleur.</span>
+    </h1>
 
-<p>
-Création de CV professionnels, lettres de motivation
-et designs modernes pour valoriser votre profil.
-</p>
+    <p>
+      CV professionnels, lettres de motivation et créations graphiques
+      modernes pour vous aider à vous démarquer.
+    </p>
 
-<a href="#offres" class="btn">
-Voir nos offres
-</a>
-
+    <div class="buttons">
+      <a class="btn btn-gold" href="#commande">Commander maintenant</a>
+      <a class="btn btn-outline" href="#portfolio">Voir nos réalisations</a>
+    </div>
+  </div>
 </section>
 
 <section id="services">
+  <div class="section-title">
+    <h2>Nos <span class="gold">Services</span></h2>
+    <p>Des créations professionnelles adaptées à vos besoins.</p>
+  </div>
 
-<div class="title">
-<h2>Nos Services</h2>
-<p>Des solutions professionnelles pour votre image.</p>
-</div>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">📄</div>
+      <h3>CV Professionnel</h3>
+      <p>Création d'un CV moderne et professionnel adapté à votre profil.</p>
+    </div>
 
-<div class="services">
+    <div class="card">
+      <div class="icon">✍️</div>
+      <h3>Lettre de motivation</h3>
+      <p>Une lettre professionnelle personnalisée pour vos candidatures.</p>
+    </div>
 
-<div class="card">
-<h3>CV Professionnel</h3>
-<p>CV moderne, élégant et adapté à votre profil.</p>
-</div>
+    <div class="card">
+      <div class="icon">💼</div>
+      <h3>Carte de visite</h3>
+      <p>Un design élégant pour présenter votre activité professionnelle.</p>
+    </div>
 
-<div class="card">
-<h3>Lettre de motivation</h3>
-<p>Une lettre professionnelle pour vos candidatures.</p>
-</div>
+    <div class="card">
+      <div class="icon">📱</div>
+      <h3>Réseaux sociaux</h3>
+      <p>Posts et visuels professionnels pour votre page ou entreprise.</p>
+    </div>
 
-<div class="card">
-<h3>Carte de visite</h3>
-<p>Design professionnel pour votre activité.</p>
-</div>
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Logo & Branding</h3>
+      <p>Une identité visuelle pour renforcer l'image de votre projet.</p>
+    </div>
 
-</div>
-
+    <div class="card">
+      <div class="icon">🖼️</div>
+      <h3>Flyer & Affiche</h3>
+      <p>Création de visuels modernes pour vos événements et promotions.</p>
+    </div>
+  </div>
 </section>
 
-<section id="offres">
+<section id="cv">
+  <div class="section-title">
+    <h2>Choisissez votre <span class="gold">type de CV</span></h2>
+    <p>Un style adapté à votre profil et au domaine visé.</p>
+  </div>
 
-<div class="title">
-<h2>Nos Offres</h2>
-<p>Choisissez votre formule.</p>
-</div>
+  <div class="grid">
+    <div class="card cv-card"><div class="icon">📋</div><h3>CV Classique</h3><p>Simple, clair et professionnel.</p></div>
+    <div class="card cv-card"><div class="icon">✨</div><h3>CV Moderne</h3><p>Un design actuel et élégant.</p></div>
+    <div class="card cv-card"><div class="icon">🎨</div><h3>CV Créatif</h3><p>Un style original qui attire l'attention.</p></div>
+    <div class="card cv-card"><div class="icon">👑</div><h3>CV Premium</h3><p>Un rendu haut de gamme et personnalisé.</p></div>
+    <div class="card cv-card"><div class="icon">🤖</div><h3>CV ATS Friendly</h3><p>Optimisé pour les systèmes de recrutement.</p></div>
+    <div class="card cv-card"><div class="icon">🎓</div><h3>CV Étudiant</h3><p>Idéal même sans expérience professionnelle.</p></div>
+  </div>
+</section>
 
-<div class="offers">
+<section id="tarifs">
+  <div class="section-title">
+    <h2>Nos <span class="gold">Offres</span></h2>
+    <p>Choisissez la formule qui vous convient.</p>
+  </div>
 
-<div class="offer">
-<h3>Essentiel</h3>
-<div class="price">15 DT</div>
+  <div class="pricing">
 
-<ul>
-<li>✓ CV professionnel</li>
-<li>✓ Design moderne</li>
-<li>✓ Format PDF</li>
-</ul>
+    <div class="price-card">
+      <h3>ESSENTIEL</h3>
+      <div class="price">15 DT</div>
+      <ul>
+        <li>✓ CV professionnel</li>
+        <li>✓ Design moderne</li>
+        <li>✓ Format PDF</li>
+        <li>✓ 1 modification</li>
+      </ul>
+      <a class="btn btn-outline" href="#commande">Choisir</a>
+    </div>
 
-<a href="#contact" class="btn">Commander</a>
-</div>
+    <div class="price-card featured">
+      <h3>PROFESSIONNEL</h3>
+      <div class="price">25 DT</div>
+      <ul>
+        <li>✓ CV professionnel</li>
+        <li>✓ Lettre de motivation</li>
+        <li>✓ Design Premium</li>
+        <li>✓ 2 modifications</li>
+      </ul>
+      <a class="btn btn-gold" href="#commande">Choisir</a>
+    </div>
 
-<div class="offer">
-<h3>Professionnel</h3>
-<div class="price">25 DT</div>
+    <div class="price-card">
+      <h3>PREMIUM</h3>
+      <div class="price">35 DT</div>
+      <ul>
+        <li>✓ CV Premium</li>
+        <li>✓ Lettre de motivation</li>
+        <li>✓ Carte de visite</li>
+        <li>✓ Design personnalisé</li>
+      </ul>
+      <a class="btn btn-outline" href="#commande">Choisir</a>
+    </div>
 
-<ul>
-<li>✓ CV professionnel</li>
-<li>✓ Lettre de motivation</li>
-<li>✓ Design Premium</li>
-<li>✓ Format PDF</li>
-</ul>
+  </div>
+</section>
 
-<a href="#contact" class="btn">Commander</a>
-</div>
-
-<div class="offer">
-<h3>Premium</h3>
-<div class="price">35 DT</div>
-
-<ul>
-<li>✓ CV Premium</li>
-<li>✓ Lettre de motivation</li>
-<li>✓ Carte de visite</li>
-<li>✓ Design personnalisé</li>
-</ul>
-
-<a href="#contact" class="btn">Commander</a>
-</div>
-
-</div>
-
+<section class="promo">
+  <h2>Offre spéciale 🎁</h2>
+  <p>Profitez de nos offres et démarquez-vous avec une présentation professionnelle.</p>
+  <a class="btn btn-gold" href="#commande">Je commande maintenant</a>
 </section>
 
 <section id="portfolio">
+  <div class="section-title">
+    <h2>Notre <span class="gold">Portfolio</span></h2>
+    <p>Quelques exemples de nos créations.</p>
+  </div>
 
-<div class="title">
-<h2>Portfolio</h2>
-<p>Découvrez nos créations.</p>
-</div>
-
-<div class="portfolio">
-
-<div class="portfolio-item">
-CV Design 01
-</div>
-
-<div class="portfolio-item">
-CV Design 02
-</div>
-
-<div class="portfolio-item">
-CV Design 03
-</div>
-
-</div>
-
+  <div class="portfolio">
+    <div class="portfolio-item"><span>🖼️</span><strong>CV Design 01</strong><br>Image à ajouter</div>
+    <div class="portfolio-item"><span>🖼️</span><strong>CV Design 02</strong><br>Image à ajouter</div>
+    <div class="portfolio-item"><span>🖼️</span><strong>CV Design 03</strong><br>Image à ajouter</div>
+    <div class="portfolio-item"><span>🖼️</span><strong>Carte de visite</strong><br>Image à ajouter</div>
+    <div class="portfolio-item"><span>🖼️</span><strong>Social Media</strong><br>Image à ajouter</div>
+    <div class="portfolio-item"><span>🖼️</span><strong>Logo</strong><br>Image à ajouter</div>
+  </div>
 </section>
 
-<section class="contact" id="contact">
+<section>
+  <div class="section-title">
+    <h2>Avant <span class="gold">/ Après</span></h2>
+    <p>Transformez une présentation simple en document professionnel.</p>
+  </div>
 
-<div class="title">
+  <div class="before-after">
+    <div class="before">
+      <div class="icon">📄</div>
+      <h3>AVANT</h3>
+      <p>CV simple et peu valorisé</p>
+    </div>
 
-<h2>Contactez-nous</h2>
+    <div class="after">
+      <div class="icon">✨</div>
+      <h3>APRÈS</h3>
+      <p>CV moderne et professionnel</p>
+    </div>
+  </div>
+</section>
 
-<p>
-Vous souhaitez commander un CV ou un design ?
-</p>
+<section id="comment">
+  <div class="section-title">
+    <h2>Comment <span class="gold">commander ?</span></h2>
+    <p>Un processus simple et rapide.</p>
+  </div>
 
-<a
-class="btn"
-href="https://wa.me/21623902898"
-target="_blank">
-Commander sur WhatsApp
-</a>
+  <div class="process">
+    <div class="step">
+      <div class="number">1</div>
+      <h3>Choisissez</h3>
+      <p>Choisissez votre service.</p>
+    </div>
 
-</div>
+    <div class="step">
+      <div class="number">2</div>
+      <h3>Remplissez</h3>
+      <p>Donnez-nous vos informations.</p>
+    </div>
 
+    <div class="step">
+      <div class="number">3</div>
+      <h3>Confirmez</h3>
+      <p>La commande est envoyée sur WhatsApp.</p>
+    </div>
+
+    <div class="step">
+      <div class="number">4</div>
+      <h3>Recevez</h3>
+      <p>Recevez votre création finale.</p>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="commande">
+  <div class="section-title">
+    <h2>Passer une <span class="gold">commande</span></h2>
+    <p>Remplissez le formulaire et votre demande sera préparée sur WhatsApp.</p>
+  </div>
+
+  <form class="form" onsubmit="sendWhatsApp(event)">
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Nom et prénom *</label>
+        <input type="text" id="nom" required>
+      </div>
+
+      <div class="form-group">
+        <label>Numéro de téléphone *</label>
+        <input type="tel" id="telephone" required>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Service demandé *</label>
+        <select id="service" required>
+          <option value="">Choisissez un service</option>
+          <option>CV Professionnel</option>
+          <option>Lettre de motivation</option>
+          <option>Carte de visite</option>
+          <option>Design réseaux sociaux</option>
+          <option>Logo & Branding</option>
+          <option>Flyer & Affiche</option>
+          <option>Autre</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Type de CV</label>
+        <select id="typecv">
+          <option value="Non concerné">Non concerné</option>
+          <option>CV Classique</option>
+          <option>CV Moderne</option>
+          <option>CV Créatif</option>
+          <option>CV Premium</option>
+          <option>CV ATS Friendly</option>
+          <option>CV Étudiant</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Informations supplémentaires</label>
+      <textarea id="message" placeholder="Décrivez votre demande..."></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-gold">
+      Envoyer ma commande sur WhatsApp
+    </button>
+
+  </form>
+</section>
+
+<section id="apropos">
+  <div class="section-title">
+    <h2>À propos de <span class="gold">Fedi Design Pro</span></h2>
+  </div>
+
+  <div class="about">
+    <p>
+      Fedi Design Pro vous accompagne dans la création de documents et
+      visuels professionnels, modernes et adaptés à votre image.
+      Notre objectif est de vous aider à vous démarquer avec des créations
+      soignées et personnalisées.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Avis de nos <span class="gold">clients</span></h2>
+    <p>La satisfaction de nos clients est notre priorité.</p>
+  </div>
+
+  <div class="testimonials">
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>Service rapide et résultat très professionnel. Je recommande !</p>
+      <div class="client">— Client</div>
+    </div>
+
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>Très satisfait du design de mon CV. Travail propre et moderne.</p>
+      <div class="client">— Client</div>
+    </div>
+
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>Une excellente communication et un résultat au-delà de mes attentes.</p>
+      <div class="client">— Client</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Questions <span class="gold">fréquentes</span></h2>
+  </div>
+
+  <div class="faq">
+    <details>
+      <summary>Combien de temps prend la création d'un CV ?</summary>
+      <p>Le délai dépend du service demandé et des informations fournies.</p>
+    </details>
+
+    <details>
+      <summary>Puis-je demander des modifications ?</summary>
+      <p>Oui, des modifications sont possibles selon la formule choisie.</p>
+    </details>
+
+    <details>
+      <summary>Dans quelles langues pouvez-vous créer un CV ?</summary>
+      <p>Nous pouvons créer des CV en français, arabe et anglais selon vos besoins.</p>
+    </details>
+
+    <details>
+      <summary>Comment puis-je passer commande ?</summary>
+      <p>Vous pouvez utiliser le formulaire du site ou nous contacter directement sur WhatsApp.</p>
+    </details>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title">
+    <h2>Besoin d'aide ? <span class="gold">Contactez-nous</span></h2>
+  </div>
+
+  <div class="contact-box">
+    <p>Nous sommes disponibles pour répondre à vos questions et vous accompagner.</p>
+    <br>
+    <a class="btn btn-gold"
+       href="https://wa.me/21623902898"
+       target="_blank">
+       Contacter sur WhatsApp
+    </a>
+  </div>
 </section>
 
 <footer>
+  <div class="footer-grid">
+    <div>
+      <h3>FEDI DESIGN PRO</h3>
+      <p>Design professionnel pour valoriser votre image.</p>
+    </div>
 
-© 2026 Fedi Design Pro — Tous droits réservés.
+    <div>
+      <h3>Navigation</h3>
+      <p><a href="#services">Nos services</a></p>
+      <p><a href="#cv">Types de CV</a></p>
+      <p><a href="#tarifs">Tarifs</a></p>
+      <p><a href="#portfolio">Portfolio</a></p>
+    </div>
 
+    <div>
+      <h3>Contact</h3>
+      <p><a href="https://wa.me/21623902898" target="_blank">WhatsApp</a></p>
+      <p>Disponible en ligne</p>
+    </div>
+  </div>
+
+  <div class="copy">
+    © 2026 Fedi Design Pro — Tous droits réservés.
+  </div>
 </footer>
 
-<a
-class="whatsapp"
-href="https://wa.me/21623902898"
-target="_blank">
-☎
+<a class="whatsapp"
+   href="https://wa.me/21623902898"
+   target="_blank"
+   title="WhatsApp">
+   ☎
 </a>
 
+<script>
+function sendWhatsApp(event) {
+  event.preventDefault();
+
+  const nom = document.getElementById("nom").value;
+  const telephone = document.getElementById("telephone").value;
+  const service = document.getElementById("service").value;
+  const typecv = document.getElementById("typecv").value;
+  const message = document.getElementById("message").value;
+
+  const text =
+    "Bonjour Fedi Design Pro,%0A%0A" +
+    "Je souhaite passer une commande :%0A%0A" +
+    "👤 Nom : " + nom + "%0A" +
+    "📞 Téléphone : " + telephone + "%0A" +
+    "💼 Service : " + service + "%0A" +
+    "📄 Type de CV : " + typecv + "%0A" +
+    "📝 Informations : " + message;
+
+  window.open(
+    "https://wa.me/21623902898?text=" + text,
+    "_blank"
+  );
+}
+</script>
+
 </body>
-  </html>
+        </html>
