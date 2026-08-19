@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fedi Design Pro</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    color: #d4af37;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: radial-gradient(circle, #29200b, #0b0b0b 60%);
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.gold {
+    color: #d4af37;
+}
+
+.hero p {
+    color: #ccc;
+    font-size: 18px;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #d4af37;
+    color: #111;
+    padding: 14px 25px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 70px 7%;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title h2 {
+    font-size: 32px;
+}
+
+.title p {
+    color: #aaa;
+    margin-top: 10px;
+}
+
+.services,
+.offers,
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card,
+.offer,
+.portfolio-item {
+    background: #151515;
+    border: 1px solid #292929;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.card:hover,
+.offer:hover {
+    border-color: #d4af37;
+}
+
+.card h3,
+.offer h3 {
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #aaa;
+}
+
+.price {
+    font-size: 32px;
+    margin: 15px;
+    font-weight: bold;
+}
+
+.offer ul {
+    list-style: none;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+.offer li {
+    margin: 8px;
+}
+
+.portfolio-item {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+}
+
+.contact {
+    text-align: center;
+    background: #111;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #777;
+    border-top: 1px solid #222;
+}
+
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #25D366;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+@media(max-width:700px) {
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .services,
+    .offers,
+    .portfolio {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Fedi Design Pro
+</div>
+
+<nav>
+<a href="#accueil">Accueil</a>
+<a href="#services">Services</a>
+<a href="#offres">Offres</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero" id="accueil">
+
+<h1>
+Votre image mérite
+<span class="gold">le meilleur.</span>
+</h1>
+
+<p>
+Création de CV professionnels, lettres de motivation
+et designs modernes pour valoriser votre profil.
+</p>
+
+<a href="#offres" class="btn">
+Voir nos offres
+</a>
+
+</section>
+
+<section id="services">
+
+<div class="title">
+<h2>Nos Services</h2>
+<p>Des solutions professionnelles pour votre image.</p>
+</div>
+
+<div class="services">
+
+<div class="card">
+<h3>CV Professionnel</h3>
+<p>CV moderne, élégant et adapté à votre profil.</p>
+</div>
+
+<div class="card">
+<h3>Lettre de motivation</h3>
+<p>Une lettre professionnelle pour vos candidatures.</p>
+</div>
+
+<div class="card">
+<h3>Carte de visite</h3>
+<p>Design professionnel pour votre activité.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="offres">
+
+<div class="title">
+<h2>Nos Offres</h2>
+<p>Choisissez votre formule.</p>
+</div>
+
+<div class="offers">
+
+<div class="offer">
+<h3>Essentiel</h3>
+<div class="price">15 DT</div>
+
+<ul>
+<li>✓ CV professionnel</li>
+<li>✓ Design moderne</li>
+<li>✓ Format PDF</li>
+</ul>
+
+<a href="#contact" class="btn">Commander</a>
+</div>
+
+<div class="offer">
+<h3>Professionnel</h3>
+<div class="price">25 DT</div>
+
+<ul>
+<li>✓ CV professionnel</li>
+<li>✓ Lettre de motivation</li>
+<li>✓ Design Premium</li>
+<li>✓ Format PDF</li>
+</ul>
+
+<a href="#contact" class="btn">Commander</a>
+</div>
+
+<div class="offer">
+<h3>Premium</h3>
+<div class="price">35 DT</div>
+
+<ul>
+<li>✓ CV Premium</li>
+<li>✓ Lettre de motivation</li>
+<li>✓ Carte de visite</li>
+<li>✓ Design personnalisé</li>
+</ul>
+
+<a href="#contact" class="btn">Commander</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="portfolio">
+
+<div class="title">
+<h2>Portfolio</h2>
+<p>Découvrez nos créations.</p>
+</div>
+
+<div class="portfolio">
+
+<div class="portfolio-item">
+CV Design 01
+</div>
+
+<div class="portfolio-item">
+CV Design 02
+</div>
+
+<div class="portfolio-item">
+CV Design 03
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<div class="title">
+
+<h2>Contactez-nous</h2>
+
+<p>
+Vous souhaitez commander un CV ou un design ?
+</p>
+
+<a
+class="btn"
+href="https://wa.me/21623902898"
+target="_blank">
+Commander sur WhatsApp
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Fedi Design Pro — Tous droits réservés.
+
+</footer>
+
+<a
+class="whatsapp"
+href="https://wa.me/21623902898"
+target="_blank">
+☎
+</a>
+
+</body>
+  </html>
